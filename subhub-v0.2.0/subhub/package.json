@@ -1,0 +1,15 @@
+{
+  "name": "subhub",
+  "version": "0.2.0",
+  "description": "SubHub - 自托管订阅管理与转换平台,支持 YAML 模板化",
+  "main": "server/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node test/run.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "yaml": "^2.6.0"
+  }
+}
