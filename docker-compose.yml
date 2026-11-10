@@ -1,0 +1,13 @@
+services:
+  subhub:
+    build: .
+    container_name: subhub
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8787:8787"   # 只监听本机,由 Nginx Proxy Manager 等反代到域名
+    environment:
+      ADMIN_PASSWORD: "请改成你自己的强密码"
+      TRUST_PROXY: "1"            # 在反向代理后面时开启,用于登录限速识别真实 IP
+      # CACHE_TTL: "300"          # 远程订阅缓存秒数
+    volumes:
+      - ./data:/data
